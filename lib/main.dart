@@ -13,6 +13,9 @@ void main() => runApp(
         ),
         debugShowCheckedModeBanner: false,
         home: SplashScreen(),
+        routes: {
+          "/home": (_)=>HomePage(),
+        },
       ),
     );
 
@@ -26,8 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(milliseconds: 5000), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (contex) => HomePage()));
+      Navigator.pushReplacementNamed(context, "/home");
     });
   }
 
